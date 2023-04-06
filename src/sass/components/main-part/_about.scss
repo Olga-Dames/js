@@ -1,0 +1,271 @@
+.section__about {
+  background: $solid-bg-color;
+  padding-bottom: 50px;
+
+  @include tablet {
+    padding-bottom: 60px;
+  }
+}
+.about__title-second {
+  width: 210px;
+  margin: 0 auto;
+  margin-bottom: 12px;
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.23;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #fcfcfc;
+
+  @include tablet {
+    width: 100%;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: 0.04em;
+  }
+
+  @include desktop {
+    font-size: 30px;
+  }
+}
+
+.about__title-main {
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 32px;
+  font-family: $secondary-font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.27;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fcfcfc;
+
+  @include tablet {
+    width: 100%;
+    margin-bottom: 72px;
+    font-size: 34px;
+    line-height: 1.26;
+    letter-spacing: 0.06em;
+  }
+
+  @include desktop {
+    margin-bottom: 82px;
+    font-size: 36px;
+    line-height: 1.25;
+  }
+}
+
+.about__content {
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    gap: 38px;
+  }
+  @include desktop {
+    gap: 110px;
+  }
+}
+.about__thumb {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin: 0 auto 62px auto;
+  background: linear-gradient(
+      0deg,
+      rgba(248, 210, 78, 0.7),
+      rgba(248, 210, 78, 0.7)
+    ),
+    #d9d9d9;
+  box-shadow: 0px 4.48583px 16.8218px rgba(153, 114, 23, 0.25);
+  border-radius: 50%;
+
+  @include tablet {
+    width: 330px;
+    height: 330px;
+    margin-bottom: 32px;
+  }
+
+  @include desktop {
+    width: 490px;
+    height: 490px;
+  }
+}
+.about__img {
+  position: absolute;
+  top: 22px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+
+  @include tablet {
+    flex-direction: row;
+    width: 330px;
+    height: 330px;
+  }
+
+  @include desktop {
+    width: 490px;
+    height: 490px;
+  }
+}
+
+.about__text {
+  margin: 0 auto;
+  padding: 0 35px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.76;
+  text-align: center;
+
+  color: #fcfcfc;
+
+  @include tablet {
+    width: 320px;
+    padding: 0px;
+    text-align: left;
+    letter-spacing: 0.04em;
+  }
+
+  @include desktop {
+    width: 463px;
+  }
+}
+
+.about__text-first {
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+
+  @include desktop {
+    font-size: 16px;
+    line-height: 1.76;
+    letter-spacing: 0.04em;
+  }
+}
+
+.about__text-second {
+  margin-bottom: 10px;
+  line-height: 1.62;
+
+  @include tablet {
+    margin-bottom: 8px;
+  }
+
+  @include desktop {
+    font-size: 14px;
+    line-height: 1.94;
+  }
+}
+
+.about__text-thirt {
+  display: none;
+
+  @include tablet {
+    display: block;
+    margin-bottom: 32px;
+    line-height: 1.94;
+  }
+
+  @include desktop {
+    margin-bottom: 54px;
+    font-size: 14px;
+    line-height: 1.94;
+  }
+}
+
+.about_button {
+  width: 164px;
+  height: 42px;
+  background: $accent-color;
+  border-radius: 10px;
+  border: 0;
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.28;
+
+  color: #000000;
+
+  &:hover {
+    background: #0a8817;
+    animation: shake-top 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  }
+  &:focus {
+    background: #0a8817;
+    color: #fcfcfc;
+    animation: shake-top 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  }
+}
+
+.about_button_symbol {
+  width: 11px;
+  height: 9px;
+  margin-left: 5px;
+  fill: #000000;
+
+  .about_button:focus & {
+    fill: #fcfcfc;
+  }
+}
+
+.about_modal_title {
+  margin: 0 auto;
+  font-family: $secondary-font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  color: #131313;
+
+  @include tablet {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}
+
+.about_modal_video {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 224px;
+  height: 199px;
+  border-radius: 10px;
+
+  @include tablet {
+    margin-top: 32px;
+    width: 448px;
+    height: 205px;
+    display: flex;
+  }
+}
+
+.about_modal_text {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 224px;
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+
+  color: #131313;
+
+  @include tablet {
+    margin-top: 32px;
+    width: 448px;
+  }
+}

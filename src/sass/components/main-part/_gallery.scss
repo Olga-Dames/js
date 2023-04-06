@@ -1,0 +1,55 @@
+.section-gallery {
+  padding-bottom: 80px;
+  background: linear-gradient(
+    180deg,
+    $solid-bg-rgba 17%,
+    $transparent-bg-rgba 17%
+  );
+
+  @media screen and (min-width: $tablet) {
+    padding-bottom: 100px;
+    background: linear-gradient(
+      180deg,
+      $solid-bg-rgba 33%,
+      $transparent-bg-rgba 33%
+    );
+  }
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 140px;
+    background: linear-gradient(
+      180deg,
+      $solid-bg-rgba 17%,
+      $transparent-bg-rgba 17%
+    );
+  }
+}
+
+.container-gallery {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: $mobile;
+
+  @media screen and (min-width: $tablet) {
+    max-width: $tablet;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: $desktop;
+    padding-left: 93px;
+    padding-right: 94px;
+  }
+}
+
+.field-gallery {
+  border-radius: 8px;
+  @media screen and (min-width: $tablet) {
+    border-radius: 18px;
+  }
+  @media screen and (min-width: $desktop) {
+    border-radius: 24px;
+  }
+}

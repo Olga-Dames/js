@@ -1,0 +1,58 @@
+%btn {
+  display: block;
+  margin: 0;
+  color: $button-text-color;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.29;
+  color: $button-text-color;
+  text-align: center;
+  background-color: $btn-default-color;
+  border-radius: $btn-border-radius;
+  border: none;
+  transition: background-color 300ms ease-in-out;
+
+  &:hover {
+    background-color: $btn-hover-bg;
+    animation: shake-top 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  }
+  &:focus {
+    background-color: $btn-hover-bg;
+    color: $button-light-color;
+    animation: shake-top 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  }
+  &:disabled {
+    background-color: $btn-disabled-color;
+    color: $primary-font-color;
+  }
+}
+
+%btn-transparent {
+  display: block;
+  margin: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: $button-text-color;
+  padding: 12px 34px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.29;
+  color: $button-text-color;
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid $btn-default-color;
+  border-radius: $btn-border-radius;
+
+  &:hover {
+    border: 2px solid $btn-hover-bg;
+  }
+  &:focus {
+    border: 2px solid $btn-hover-bg;
+    color: $button-light-color;
+  }
+  &:disabled {
+    border: 2px solid $btn-disabled-color;
+  }
+}

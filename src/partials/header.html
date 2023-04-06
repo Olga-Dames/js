@@ -1,0 +1,141 @@
+<header class="section__header" data-header>
+  <div class="container header"><picture>
+        <img 
+        class="logo"
+        srcset="
+        ./images/header/logo/s_40.png 40w, 
+        ./images/header/logo/m_48.png 48w, 
+        ./images/header/logo/l_60.png 60w
+        "
+        sizes=" (min-width: 1200px) 60px, (min-width: 768px) 48px, (min-width: 320px) 40px"
+        src="./images/header/logo/l_60.png" 
+        alt="logo"
+        >
+    </picture>
+      <!-- <img class="logo" src="./images/header/logo/l_60.png" alt="logo"> -->
+      <nav>
+        <ul class="header__nav">
+          <li class="header__nav-list"><a class="header__nav-link" href="#home">Home</a></li>
+          <li class="header__nav-list"><a class="header__nav-link" href="#how-it-is-made">How it’s made?</a></li>
+          <li class="header__nav-list"><a class="header__nav-link" href="#our-products">Our products</a></li>
+          <li class="header__nav-list"><a class="header__nav-link" href="#contacts">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__mobile-menu">
+      <button
+        class="menu-toggle js-open-menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg class="menu_icon" width="32" height="32">
+          <use href="./images/icons.svg#icon-burger"></use>
+        </svg>
+      </button>
+      <div class="menu-container js-menu-container" id="mobile-menu">
+                <img class="logo_menu" src="./images/header/logo/m_48.png" alt="logo">
+          <button class="menu-toggle js-close-menu">
+            <svg class="menu_icon_close" width="32" height="32">
+              <use href="./images/icons.svg#icon-close-menu"></use>
+            </svg>
+          </button>
+          <ul class="mobile__menu">
+            <li class="mobile__list"><a href="#home" class="mobile__link link">Home</a></li>
+            <li class="mobile__list"><a href="#how-it-is-made" class="mobile__link link">How it’s made?</a></li>
+            <li class="mobile__list"><a href="#our-products" class="mobile__link link">Our products</a></li>
+            <li class="mobile__list"><a href="#contacts" class="mobile__link link">Contact</a></li>
+          </ul>
+          <div class="btn__header">
+            <button
+            class="header__bt-menu js-open-modal"
+            data-modal="openBuyNow" 
+            type="button"
+            data-modal-open>Buy now 
+              <svg class="icon_arrow" width="12" height="12">
+                <use href="./images/icons.svg#icon-arrow-short"></use>
+              </svg>
+            </button>
+          </div>
+        <script
+          defer
+          src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+          integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+          crossorigin="anonymous"
+        ></script>
+        </div>
+       <button 
+       class="header__bt js-open-modal" 
+       data-modal="openBuyNow"
+       type="button">
+       Buy now 
+        <svg class="icon_modal" width="12" height="12" data-modal-open>
+                <use href="./images/icons.svg#icon-arrow-short"></use>
+            </svg>
+       </button>
+      </div> 
+  </header>
+
+<!-- Модалка  -->
+
+  <section>
+<div class="modal products-modal modal__buynow" data-modal="openBuyNow">
+  <button type="button" class="modal__button js-modal-close">
+    <svg class="modal__cross">
+      <use class="" href="./images/icons.svg#icon-close-modal20"></use>
+    </svg>
+  </button>
+
+            <p class="header_modal-title">Buy now</p>
+        <ul class="list products__list-header">
+          <li class="products__item-header">
+            <h3 class="products__name-header">ice cream</h3>
+          </li>
+          <li class="products__item-header">
+            <h3 class="products__name-header">ice coffee</h3>
+          </li>
+          <li class="products__item-header">
+            <h3 class="products__name-header">milkshakes</h3>
+          </li>
+        </ul>
+        <form class="products-modal__form">
+          <label class="products-modal__label">
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              class="products-modal__field products-modal__input"
+            />
+          </label>
+    
+          <label class="products-modal__label">
+            <input
+              type="tel"
+              name="tel"
+              placeholder="Phone"
+              class="products-modal__field products-modal__input"
+            />
+          </label>
+    
+          <label class="products-modal__label">
+            <textarea
+              name="comment"
+              placeholder="Comment"
+              class="products-modal__field products-modal__comment"
+            ></textarea>
+          </label>
+    
+          <button
+            type="submit"
+            title="Відправити"
+            class="products-modal__btn--submit"
+          >
+            Submit
+          </button>
+        </form>
+    </div>
+<!-- Конец модалок -->
+
+<!-- Подложка (Backdrop) под модальным окном, нужно поставить в конец, перд закрытием body -->
+<div class="overlay js-overlay-modal"></div>
+  </div>
+</section>
+
