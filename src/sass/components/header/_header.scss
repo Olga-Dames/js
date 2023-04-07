@@ -1,193 +1,189 @@
 .header {
+  position: absolute;
+  padding: 20px;
+
+  @media screen and (min-width: 768px) {
+    padding: 32px;
+  }
+}
+
+.header__content {
+  position: fixed;
+  z-index: 100;
+  height: 460px;
+  margin: 0 auto;
+  padding: 14px 14px 20px;
   display: flex;
-  align-items: center;
+  // min-width: 100vw;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
 
-  padding-top: 12px;
-
-  @include tablet {
-    padding: 20px 32px 10px 32px;
+  @media screen and (min-width: 768px) {
+    height: 222px;
+    padding: 16px;
+    width: 704px;
   }
 
-  @include desktop {
-    padding: 8px 16px;
-    padding-bottom: 20px;
-  }
-}
-.section__header {
-  background-color: $solid-bg-color;
-
-  @include tablet {
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-
-    &.no-transparency {
-      background-color: rgba(132, 161, 120, 0.5);
-      backdrop-filter: blur(4px);
-    }
+  @media screen and (min-width: 1280px) {
+    height: 316px;
+    padding: 16px 32px;
+    width: 1216px;
   }
 }
 
-.logo {
-  width: 40px;
-
-  @include tablet {
-    width: 48px;
+.header__upper {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 8px;
   }
-
-  @include desktop {
-    width: 60px;
+  @media screen and (min-width: 1280px) {
   }
 }
 
 .header__nav {
-  display: none;
-
-  @include desktop {
-    display: flex;
-    margin-left: 368px;
-    padding-top: 10px;
-  }
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
 }
 
-.header__nav-list {
-  &:not(:last-child) {
-    margin-right: 28px;
-  }
-}
-
-.header__nav-link {
-  font-weight: 700;
-  font-size: 16px;
-
-  transition: all 0.8s ease 0s;
-
-  color: #fcfcfc;
-  color: $secondary-font-color;
+.header__nav-btn {
+  display: block;
+  background: $light-bg-color;
+  border-radius: 100px;
+  font-family: $primary-font;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  color: $primary-font-color;
+  transition: color 250ms linear, background-color 250ms linear;
 
   &:hover,
   &:focus {
-    color: $accent-color;
+    color: $light-font-xolor;
+    background-color: $dark-bg-color;
+  }
+
+  &--home {
+    padding: 12px 32px;
+
+    @media screen and (min-width: 768px) {
+      padding: 14px 32px;
+    }
+  }
+  &--lib {
+    padding: 12px 24px;
+
+    @media screen and (min-width: 768px) {
+      padding: 14px 32px;
+    }
   }
 }
 
-.header__bt {
-  display: none;
-
-  @include tablet {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    position: relative;
-    min-width: 152px;
-    height: 42px;
-    color: $button-text-color;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.29;
-    color: $button-text-color;
-    text-align: center;
-    background-color: $btn-default-color;
-    border-radius: $btn-border-radius;
-    border: none;
-  }
-  &:hover {
-    background-color: $btn-hover-bg;
-    animation: shake-top 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
-  }
-  &:focus {
-    background-color: $btn-hover-bg;
-    color: $button-light-color;
-    animation: shake-top 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
-  }
-  &:disabled {
-    background-color: $btn-disabled-color;
-    color: $primary-font-color;
-  }
-
-  &::after {
-    position: absolute;
-    content: '';
-    top: 0;
-    right: 0;
-    transform: translate(-120%, 50%);
-    width: 24px;
-    height: 24px;
-    background-image: url(../images/icons.svg#icon-arrow-short);
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-left: 10px;
-  }
-}
-
-.header__bt-menu {
-  margin: 0 auto;
-  margin-top: 110px;
-  display: block;
-  gap: 4px;
+.header__form {
   position: relative;
-  min-width: 152px;
-  height: 42px;
-  color: $button-text-color;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.29;
-  color: $button-text-color;
-  text-align: center;
-  background-color: $btn-default-color;
-  border-radius: $btn-border-radius;
-  cursor: pointer;
+  max-width: 252px;
+}
+
+.header__input {
+  display: block;
+  margin: 0 auto;
+  width: 252px;
+  height: 38px;
+  padding: 11px 14px;
+  background: #ffffff;
+  border-radius: 100px;
+  outline: transparent;
   border: none;
 
-  @include tablet {
-    display: none;
+  @media screen and (min-width: 768px) {
+    padding: 13px 16px;
+    width: 187px;
+    height: 42px;
   }
 
-  &:hover {
-    background-color: $btn-hover-bg;
-  }
-  &:focus {
-    background-color: $btn-hover-bg;
-    color: $button-light-color;
-  }
-  &:disabled {
-    background-color: $btn-disabled-color;
+  &::placeholder {
+    font-family: $primary-font;
+    font-size: 14px;
+    line-height: 1.14;
     color: $primary-font-color;
   }
+}
 
-  &::after {
-    position: absolute;
-    content: '';
-    top: 0;
-    right: 0;
-    transform: translate(-120%, 50%);
-    width: 24px;
-    height: 24px;
-    background-image: url(../images/icons.svg#icon-arrow-short);
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-left: 10px;
+.header__search-btn {
+  position: absolute;
+  top: 4px;
+  right: 7px;
+  padding: 7px;
+  background-color: transparent;
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    top: 5px;
+    right: 8px;
+    padding: 8px;
   }
 }
 
-.logo_menu {
-  width: 40px;
+.logo {
+  width: 32px;
+  height: 32px;
 
-  @include tablet {
-    width: 48px;
+  @media screen and (min-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 59px;
+    height: 59px;
   }
 }
 
-.modal__buynow {
-  height: 780px;
+.logo__link {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
 
-  @include tablet {
-    height: 554px;
+  @media screen and (min-width: 768px) {
+    justify-content: flex-start;
   }
+  @media screen and (min-width: 1280px) {
+    gap: 16px;
+  }
+}
+
+.header__title {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.19;
+  color: $light-font-xolor;
+
+  @media screen and (min-width: 768px) {
+    font-size: 40px;
+    line-height: 1.18;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 64px;
+    line-height: 1.17;
+  }
+}
+
+.current {
+  color: $light-font-xolor;
+  background-color: $dark-bg-color;
 }

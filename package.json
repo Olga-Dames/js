@@ -21,7 +21,7 @@
     "animate.css": "^4.1.1",
     "lodash.throttle": "^4.1.1",
     "modern-normalize": "^1.1.0",
-    "swiper": "^8.4.5"
+    "swiper": "^8.4.7"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",

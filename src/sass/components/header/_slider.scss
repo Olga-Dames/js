@@ -1,0 +1,23 @@
+.swiper {
+    overflow: hidden;
+  height: 460px;
+  @media screen and (min-width: 768px) {
+    height: 222px;
+  }
+  @media screen and (min-width: 1280px) {
+    height: 316px;
+  }
+}
+.swiper-slide {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.slider__img {
+  @media screen and (min-width: 768px) {
+    height: 222px;
+  }
+  @media screen and (min-width: 1280px) {
+    height: 316px;
+  }
+}
