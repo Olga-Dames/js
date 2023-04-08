@@ -40,6 +40,7 @@ console.log(savedGenres);
 
 }
 const insertCardMarkup = (movies) => {
+    
   const cardMarkup = movies
     .map(({ title, release_date, poster_path, genre_ids, first_air_date }) => {
       // console.log(release_date);

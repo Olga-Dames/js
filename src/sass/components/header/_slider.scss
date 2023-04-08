@@ -1,13 +1,16 @@
 .swiper {
-    overflow: hidden;
+  overflow: hidden;
   height: 460px;
   @media screen and (min-width: 768px) {
+    width: 704px;
     height: 222px;
   }
   @media screen and (min-width: 1280px) {
     height: 316px;
+    width: 1216px;
   }
 }
+
 .swiper-slide {
   border-radius: 10px;
   overflow: hidden;
