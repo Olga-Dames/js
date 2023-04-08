@@ -7,7 +7,6 @@ const refs = {
   movieContainer: document.querySelector('.card__container'),
 };
 
-// refs.form.addEventListener('submit', onSubmit);
 window.addEventListener('load', onLoad);
 
 async function onLoad(e) {
@@ -15,66 +14,59 @@ async function onLoad(e) {
   if (!window.localStorage.getItem('genres')) {
     try {
       const { genres } = await API.getGenreInfo();
-      console.log(genres);
-      
+
       const genresToSave = genres.reduce((acc, { id, name }) => {
-        acc[id] = name ;
+        acc[id] = name;
         return acc;
       }, {});
       window.localStorage.setItem('genres', JSON.stringify(genresToSave));
+      const { results } = await API.getPopularMovies();
+      insertCardMarkup(results);
     } catch (error) {
       console.log(error);
     }
   }
-
-  try {
-    const { results } = await API.getPopularMovies();
-    insertCardMarkup(results);
-  } catch (error) {
-    console.log(error);
-  }
 }
 
-// fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=YOUR_API_KEY')
-//   .then(response => response.json())
-//   .then(data => {
-//     const genres = data.genres;
-//     const genreId = 28; // пример идентификатора жанра
-//     const genre = genres.find(genre => genre.id === genreId);
-//     if (genre) {
-//       console.log(genre.name); // вывод названия жанра
-//     }
-//   })
-//   .catch(error => console.error(error));
-
-const getGenresNames = id => {
-
+const getGenresNames = ids => {
   const savedGenres = JSON.parse(window.localStorage.getItem('genres'));
-  console.log(Object.keys(savedGenres));
-
-  for (const id in savedGenres) {
-    // if(gengeId === id){
-    //   console.log('we fount it');
-  }
-  // const element = savedGenres[id];
-
-  // }
+  const genresNames = Object.entries(savedGenres)
+    .filter(([key]) => ids.includes(parseInt(key)))
+    .map(([_, value]) => value);
+    
+  return genresNames;
 };
-// const genre = savedGenres.find(genre)
-
-// }
-getGenresNames();
 
 const insertCardMarkup = movies => {
   const cardMarkup = movies
     .map(({ title, release_date, poster_path, genre_ids, first_air_date }) => {
-      console.log(release_date);
+      const getGenreNames = getGenresNames(genre_ids);
+      // const movieData = {
+      //   release_date: '2022-08-10',
+      //   first_air_date: '2022-08-10',
+      // };
       
+      // let releaseDate;
+      
+      // switch (true) {
+      //   case !!movieData.release_date:
+      //     releaseDate = movieData.release_date;
+      //     break;
+      //   case !!movieData.releasedate:
+      //     releaseDate = movieData.releasedate;
+      //     break;
+      //   default:
+      //     releaseDate = undefined;
+      // }
+      
+      // console.log(releaseDate);
+
+
       return `
 <li class=film_card>
 <img class=film_poster src=https://image.tmdb.org/t/p/original${poster_path} width= 50 height= 50 alt= ${title}/>
 <p class=film_name>${title}</p>
-<p class=movie-gener>${genre_ids}${release_date}</p>
+<p class=movie-gener>${getGenreNames}${release_date}</p>
 </li>`;
     })
     .join('');
