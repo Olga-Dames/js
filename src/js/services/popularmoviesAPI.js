@@ -11,6 +11,7 @@ const getPopularMovies = async () => {
 
 const getGenreInfo = async () => {
   const res = await axios.get(`/genre/movie/list?api_key=${API_KEY}`);
+  
   return res.data;
 };
 

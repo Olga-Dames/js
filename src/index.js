@@ -15,11 +15,13 @@ async function onLoad(e) {
   if (!window.localStorage.getItem('genres')) {
     try {
       const { genres } = await API.getGenreInfo();
-      const dataToSave = genres.reduce((acc, { id, name }) => {
-        acc[id] = { name };
+      console.log(genres);
+      
+      const genresToSave = genres.reduce((acc, { id, name }) => {
+        acc[id] = name ;
         return acc;
       }, {});
-      window.localStorage.setItem('genres', JSON.stringify(dataToSave));
+      window.localStorage.setItem('genres', JSON.stringify(genresToSave));
     } catch (error) {
       console.log(error);
     }
@@ -33,28 +35,49 @@ async function onLoad(e) {
   }
 }
 
+// fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=YOUR_API_KEY')
+//   .then(response => response.json())
+//   .then(data => {
+//     const genres = data.genres;
+//     const genreId = 28; // пример идентификатора жанра
+//     const genre = genres.find(genre => genre.id === genreId);
+//     if (genre) {
+//       console.log(genre.name); // вывод названия жанра
+//     }
+//   })
+//   .catch(error => console.error(error));
 
-const getGenresNames =() => {
-const savedGenres = window.localStorage.getItem('genres')
-console.log(savedGenres);
+const getGenresNames = id => {
 
-}
-const insertCardMarkup = (movies) => {
-    
+  const savedGenres = JSON.parse(window.localStorage.getItem('genres'));
+  console.log(Object.keys(savedGenres));
+
+  for (const id in savedGenres) {
+    // if(gengeId === id){
+    //   console.log('we fount it');
+  }
+  // const element = savedGenres[id];
+
+  // }
+};
+// const genre = savedGenres.find(genre)
+
+// }
+getGenresNames();
+
+const insertCardMarkup = movies => {
   const cardMarkup = movies
     .map(({ title, release_date, poster_path, genre_ids, first_air_date }) => {
-      // console.log(release_date);
-
+      console.log(release_date);
+      
       return `
-<li class=movie__item>
-<img src=https://image.tmdb.org/t/p/original${poster_path} width= 50 height= 50 alt= ${title}/>
-<p class=movie__title>${title}</p>
-<p class=movie__genre>${genre_ids}${release_date}</p>
+<li class=film_card>
+<img class=film_poster src=https://image.tmdb.org/t/p/original${poster_path} width= 50 height= 50 alt= ${title}/>
+<p class=film_name>${title}</p>
+<p class=movie-gener>${genre_ids}${release_date}</p>
 </li>`;
     })
     .join('');
 
   refs.movieContainer.innerHTML = cardMarkup;
 };
-
-const getGenresInfo = () => {};
