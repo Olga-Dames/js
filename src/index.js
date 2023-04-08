@@ -33,35 +33,13 @@ const getGenresNames = ids => {
   const genresNames = Object.entries(savedGenres)
     .filter(([key]) => ids.includes(parseInt(key)))
     .map(([_, value]) => value);
-    
   return genresNames;
 };
 
 const insertCardMarkup = movies => {
   const cardMarkup = movies
     .map(({ title, release_date, poster_path, genre_ids, first_air_date }) => {
-      const getGenreNames = getGenresNames(genre_ids);
-      // const movieData = {
-      //   release_date: '2022-08-10',
-      //   first_air_date: '2022-08-10',
-      // };
-      
-      // let releaseDate;
-      
-      // switch (true) {
-      //   case !!movieData.release_date:
-      //     releaseDate = movieData.release_date;
-      //     break;
-      //   case !!movieData.releasedate:
-      //     releaseDate = movieData.releasedate;
-      //     break;
-      //   default:
-      //     releaseDate = undefined;
-      // }
-      
-      // console.log(releaseDate);
-
-
+      const getGenreNames = getGenresNames(genre_ids);   
       return `
 <li class=film_card>
 <img class=film_poster src=https://image.tmdb.org/t/p/original${poster_path} width= 50 height= 50 alt= ${title}/>
