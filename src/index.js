@@ -64,3 +64,46 @@ const insertCardMarkup = movies => {
 
   refs.movieContainer.innerHTML = cardMarkup;
 };
+import { apiMovie } from "./serviseAPI";
+
+// const trailerBox = document.querySelector('.trailer__list');
+
+// window.addEventListener('load', fetchTrailers);
+
+// async function fetchTrailers(e) {
+//   e.preventDefault();
+//   try {
+//     const trailers = await apiMovie.fetchAllMovie(1);
+//     id = trailers.results;
+//   } catch (error) {
+//     console.log(error);
+//   }
+
+//   const trailer = id.map(async ({ id }) => {
+//     try {
+//       const video = await apiMovie.fetchTrailerById(id);
+//       return video.results;
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   });
+
+//   const lastTry = await Promise.all(trailer);
+//   trailerMarkup(lastTry.flat());
+// }
+
+// const trailerMarkup = async movies => {
+//     const filteredMovies = await movies.filter(movie => movie.type === 'Trailer' && movie.name === 'Official Trailer')
+//     console.log(filteredMovies);
+    
+//     const cardMarkup = await filteredMovies
+//       .map(({ id, key, official }) => {   
+//         return `
+//         <li><iframe width="230" height="150" src="https://www.youtube.com/embed/${key}" title="YouTube video player" 
+//         frameborder="0" allow="accelerometer; autoplay; 
+//         clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>`;
+//       })
+//       .join('');
+  
+//       trailerBox.innerHTML = cardMarkup;
+//   }
