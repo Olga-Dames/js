@@ -1,10 +1,42 @@
-import swiper from './js/swiper';
-
+import Swiper, { Keyboard, Autoplay, EffectCoverflow} from 'swiper';
+import '../node_modules/swiper/swiper.scss';
 import API from './js/services/popularmoviesAPI';
+
+const movieslider = new Swiper('.mySwiper', {
+  modules: [Autoplay, EffectCoverflow],
+  autoplay: {
+    delay: 3000,
+  },
+  effect:'coverflow',
+  coverflowEffect: {
+    rotate: 40,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true,
+  },
+  grabCursor: true,
+  followFinger: true,
+  slidesPerView: 4,
+  spaceBetween: 30,
+  centeredSlides: true,
+  loop: true,
+  speed: 500,
+});
+
+window.addEventListener('wheel', function(e) {
+  e.preventDefault();
+
+  if (e.deltaY < 0) {
+    movieslider.slidePrev();
+  } else if (e.deltaY > 0) {
+    movieslider.slideNext();
+  }
+});
 
 const refs = {
   form: document.querySelector('.header__form'),
-  movieContainer: document.querySelector('.ring'),
+  movieContainer: document.querySelector('.swiper-wrapper'),
 };
 
 window.addEventListener('load', onLoad);
@@ -54,14 +86,23 @@ const insertCardMarkup = movies => {
         releaseDate = movieData.first_air_date;
       }
       return `
-      <div class=img>
-      <img  src=https://image.tmdb.org/t/p/original${poster_path} width= 50 height= 50 alt= ${title} />
-      </div>`
+      <div class=swiper-slide><img class=image src=https://image.tmdb.org/t/p/original${poster_path} width=100 height=100/></div>`
     })
     .join('');
 
   refs.movieContainer.innerHTML = cardMarkup;
 };
+
+
+
+
+// window.addEventListener('scroll', function() {
+//   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+//   var parallax = document.querySelector('.swiper__container ');
+//   parallax.style.transform = 'translate3d(0,' + scrollTop / 2 + 'px,0)';
+// });
+
 // import { apiMovie } from "./serviseAPI";
 
 // const insertCardMarkup = movies => {
