@@ -7,7 +7,7 @@ const movieslider = new Swiper('.mySwiper', {
   autoplay: {
     delay: 3000,
   },
-  effect:['coverflow', 'parallax'],
+  effect:'coverflow',
   coverflowEffect: {
     rotate: 40,
     stretch: 0,
