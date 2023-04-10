@@ -1,4 +1,4 @@
-import Swiper, { Keyboard, Autoplay, EffectCoverflow} from 'swiper';
+import Swiper, { Keyboard, Autoplay, EffectCoverflow, Parallax} from 'swiper';
 import '../node_modules/swiper/swiper.scss';
 import API from './js/services/popularmoviesAPI';
 
@@ -7,7 +7,7 @@ const movieslider = new Swiper('.mySwiper', {
   autoplay: {
     delay: 3000,
   },
-  effect:'coverflow',
+  effect:['coverflow', 'parallax'],
   coverflowEffect: {
     rotate: 40,
     stretch: 0,
@@ -96,12 +96,12 @@ const insertCardMarkup = movies => {
 
 
 
-// window.addEventListener('scroll', function() {
-//   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+window.addEventListener('scroll', function() {
+  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-//   var parallax = document.querySelector('.swiper__container ');
-//   parallax.style.transform = 'translate3d(0,' + scrollTop / 2 + 'px,0)';
-// });
+  var parallax = document.querySelector('.swiper__container ');
+  parallax.style.transform = 'translate3d(0,' + scrollTop / 2 + 'px,0)';
+});
 
 // import { apiMovie } from "./serviseAPI";
 
