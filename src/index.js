@@ -4,7 +4,7 @@ import API from './js/services/popularmoviesAPI';
 
 const refs = {
   form: document.querySelector('.header__form'),
-  movieContainer: document.querySelector('.card__container'),
+  movieContainer: document.querySelector('.ring'),
 };
 
 window.addEventListener('load', onLoad);
@@ -54,17 +54,43 @@ const insertCardMarkup = movies => {
         releaseDate = movieData.first_air_date;
       }
       return `
-<li class=film_card>
-<img class=film_poster src=https://image.tmdb.org/t/p/original${poster_path} width= 50 height= 50 alt= ${title}/>
-<p class=film_name>${title}</p>
-<p class=movie-gener>${getGenreNames}${releaseDate.slice(0,4)}</p>
-</li>`;
+      <div class=img>
+      <img  src=https://image.tmdb.org/t/p/original${poster_path} width= 50 height= 50 alt= ${title} />
+      </div>`
     })
     .join('');
 
   refs.movieContainer.innerHTML = cardMarkup;
 };
-import { apiMovie } from "./serviseAPI";
+// import { apiMovie } from "./serviseAPI";
+
+// const insertCardMarkup = movies => {
+//   const cardMarkup = movies
+//     .map(({ title, release_date, poster_path, genre_ids, first_air_date }) => {
+//       const getGenreNames = getGenresNames(genre_ids);
+
+//       const movieData = {
+//         release_date,
+//         first_air_date,
+//       };
+//       let releaseDate;
+//       if (movieData.release_date) {
+//         releaseDate = movieData.release_date;
+//       } else if (movieData.first_air_date) {
+//         releaseDate = movieData.first_air_date;
+//       }
+//       return `
+// <li class=film_card>
+// <img class=film_poster src=https://image.tmdb.org/t/p/original${poster_path} width= 50 height= 50 alt= ${title}/>
+// <p class=film_name>${title}</p>
+// <p class=movie-gener>${getGenreNames}${releaseDate.slice(0,4)}</p>
+// </li>`;
+//     })
+//     .join('');
+
+//   refs.movieContainer.innerHTML = cardMarkup;
+// };
+// import { apiMovie } from "./serviseAPI";
 
 // const trailerBox = document.querySelector('.trailer__list');
 
