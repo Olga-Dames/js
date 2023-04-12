@@ -1,7 +1,7 @@
 import Swiper, { Keyboard, Autoplay } from 'swiper';
 import '../../node_modules/swiper/swiper.scss';
 
-export const swiper = new Swiper('[data-swiper="gallery"]', {
+const swiper = new Swiper('[data-swiper="gallery"]', {
   modules: [Keyboard, Autoplay],
   keyboard: {
     enabled: true,
@@ -13,3 +13,4 @@ export const swiper = new Swiper('[data-swiper="gallery"]', {
   speed: 1000,
 });
 
+export default swiper;

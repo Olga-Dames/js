@@ -1,8 +1,15 @@
 @import './common';
-@import './utilities/variables';
-@import './utilities/mixin';
-@import './utilities/global';
-@import './components/header/header';
-@import './components/header/slider';
-@import './components/movie-card'
-
+@import './variables';
+@import './global';
+@import './container';
+@import './header';
+@import './library-header';
+@import './footer';
+@import './modal';
+@import './loader';
+@import './modalContent';
+@import './film-card';
+@import './modal_footer';
+@import './pagination';
+@import './btn-up';
+@import './top-slider';
