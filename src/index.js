@@ -11,4 +11,4 @@ import './js/queue';
 import './js/searchQuery';
 import './js/top-slider';
 import './js/sliderMarkup';
-import './js/gengerfilter';
+import './js/genresFilter';
