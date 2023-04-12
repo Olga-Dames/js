@@ -16,7 +16,6 @@ const modal = document.querySelector('.modal');
 const movieContainer = document.querySelector('.card__container');
 
 filmCardRefs.addEventListener('click', openModalMovie);
-console.log(filmCardRefs);
 
 // async
 function openModalMovie(event) {
